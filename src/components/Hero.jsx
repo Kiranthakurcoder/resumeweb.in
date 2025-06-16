@@ -78,11 +78,11 @@ const Hero = () => {
           >
             <FaWhatsapp className="hover:text-pink-400" />
           </a>
-          <a href="kiranthakur1407@email.com">
+          <a href="mailto:kiranthakur1407@gmail.com">
             <MdEmail className="hover:text-pink-400" />
           </a>
           <a
-            href="https://github.com/your_github"
+            href="https://github.com/kiranthakurcoder"
             target="_blank"
             rel="noopener noreferrer"
           >
