@@ -41,7 +41,7 @@ const Navbar = () => {
           <li className="hover:text-pink-400 cursor-pointer">
             <Link to="/contact">Contact</Link>
           </li>
-          <a href="dd">
+          <a href="https://github.com/Kiranthakurcoder/resumeweb.in">
             <li className="bg-orange-400 w-24 rounded-3xl border-amber-400 p-2 text-center hover:bg-pink-400">
               GitHub
             </li>
