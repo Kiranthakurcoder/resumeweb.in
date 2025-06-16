@@ -1,0 +1,958 @@
+
+// import React, { useState } from 'react';
+// import { FaTwitter, FaGooglePlusG, FaFacebookF } from 'react-icons/fa';
+
+import About from "./src/components/About";
+import Contact from "./src/components/Contact";
+import FullStackDeveloper from "./src/components/FullStackDeveloper";
+import Hero from "./src/components/Hero";
+import Projects from "./src/components/Projects";
+
+// const Loginpage = () => {
+//   const [isLogin, setIsLogin] = useState(false);
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-500 px-4">
+//       <div className="relative w-full max-w-5xl bg-white shadow-2xl rounded-lg overflow-hidden flex transition-all duration-700">
+        
+//         {/* Sliding Background Side */}
+//         <div className={`absolute top-0 h-full w-1/2 z-10 transition-all duration-700 ease-in-out 
+//           ${isLogin ? 'left-1/2' : 'left-0'} 
+//           bg-[url('https://img.freepik.com/free-photo/programming-background-with-html-text_23-2150040419.jpg?semt=ais_hybrid&w=740')] 
+//           bg-cover bg-center text-white flex flex-col justify-center items-center px-8 py-12 rounded-lg`}>
+          
+//           <div className="flex gap-4 justify-center">
+//             <a href="#" className="bg-white text-blue-500 rounded-full p-2 hover:scale-110 transition"><FaTwitter /></a>
+//             <a href="#" className="bg-white text-red-500 rounded-full p-2 hover:scale-110 transition"><FaGooglePlusG /></a>
+//             <a href="#" className="bg-white text-blue-700 rounded-full p-2 hover:scale-110 transition"><FaFacebookF /></a>
+//           </div>
+//         </div>
+
+//         {/* Form Container */}
+//         <div className="flex w-full transition-all duration-700">
+
+//           {/* Login Form */}
+//           <div className={`w-1/2 p-10 transition-all duration-700 ${isLogin ? 'opacity-100 z-20' : 'opacity-0 z-0'}`}>
+//             <div className="flex justify-end mb-6">
+//               <button
+//                 onClick={() => setIsLogin(false)}
+//                 className="text-gray-600 mr-4 border-b-2 border-transparent hover:border-black transition"
+//               >Register</button>
+//               <button className="text-white bg-sky-500 px-4 py-1 rounded">Sign In</button>
+//             </div>
+//             <h2 className="text-3xl font-bold text-gray-800 mb-6">Login</h2>
+//             <form className="space-y-5">
+//               <input type="email" placeholder="Enter Your Email" className="w-full border-b p-2 focus:outline-none" />
+//               <input type="password" placeholder="Password" className="w-full border-b p-2 focus:outline-none" />
+//               <button className="w-full bg-sky-500 text-white py-3 rounded-md hover:bg-sky-600 transition">
+//                 Login
+//               </button>
+//             </form>
+//           </div>
+
+//           {/* Register Form */}
+//           <div className={`w-1/2 p-10 transition-all duration-700 ${isLogin ? 'opacity-0 z-0' : 'opacity-100 z-20'}`}>
+//             <div className="flex justify-end mb-6">
+//               <button className="text-gray-600 mr-4 border-b-2 border-transparent hover:border-black transition"
+//                 onClick={() => setIsLogin(true)}>Sign In</button>
+//               <button className="text-white bg-sky-500 px-4 py-1 rounded">Register</button>
+//             </div>
+//             <h2 className="text-3xl font-bold text-gray-800 mb-6">Register</h2>
+//             <form className="space-y-5">
+//               <input type="text" placeholder="Full Name" className="w-full border-b p-2 focus:outline-none" />
+//               <input type="email" placeholder="Enter Your Email" className="w-full border-b p-2 focus:outline-none" />
+//               <input type="password" placeholder="Password" className="w-full border-b p-2 focus:outline-none" />
+//               <div className="flex items-start gap-2">
+//                 <input type="checkbox" className="mt-1" />
+//                 <p className="text-sm text-gray-600">
+//                   I agree to the <span className="text-blue-500 underline">Terms of service</span>
+//                 </p>
+//               </div>
+//               <button className="w-full bg-sky-500 text-white py-3 rounded-md hover:bg-sky-600 transition">
+//                 Sign Up
+//               </button>
+//             </form>
+//           </div>
+
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Loginpage;
+
+
+
+// import React, { useState } from "react";
+
+// const AuthPage = () => {
+//   const [isLogin, setIsLogin] = useState(true);
+//   const [formData, setFormData] = useState({
+//     username: "", // Register ke liye
+//     email: "",
+//     password: "",
+//   });
+
+//   const handleChange = (e) => {
+//     setFormData(prev => ({
+//       ...prev,
+//       [e.target.name]: e.target.value
+//     }));
+//   };
+
+//   // 🔵 Login
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     const res = await fetch("http://localhost:3000/api/login", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         email: formData.email,
+//         password: formData.password
+//       }),
+//     });
+//     const data = await res.text();
+//     alert("Login: " + data);
+//     setFormData({ username: "", email: "", password: "" });
+//   };
+
+//   // 🟢 Register
+//   const handleRegister = async (e) => {
+//     e.preventDefault();
+//     const res = await fetch("http://localhost:3000/api/register", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(formData),
+//     });
+//     const data = await res.text();
+//     alert("Register: " + data);
+//     setFormData({ username: "", email: "", password: "" });
+//   };
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+//       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+//         <div className="flex justify-between mb-4">
+//           <button onClick={() => setIsLogin(true)} className={`px-4 py-2 rounded ${isLogin ? 'bg-pink-500 text-white' : 'bg-gray-200'}`}>Login</button>
+//           <button onClick={() => setIsLogin(false)} className={`px-4 py-2 rounded ${!isLogin ? 'bg-pink-500 text-white' : 'bg-gray-200'}`}>Register</button>
+//         </div>
+
+//         {isLogin ? (
+//           <form onSubmit={handleLogin} className="space-y-4">
+//             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required className="w-full border px-4 py-2" />
+//             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required className="w-full border px-4 py-2" />
+//             <button type="submit" className="w-full bg-pink-500 text-white py-2 rounded">Login</button>
+//           </form>
+//         ) : (
+//           <form onSubmit={handleRegister} className="space-y-4">
+//             <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required className="w-full border px-4 py-2" />
+//             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required className="w-full border px-4 py-2" />
+//             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required className="w-full border px-4 py-2" />
+//             <button type="submit" className="w-full bg-pink-500 text-white py-2 rounded">Register</button>
+//           </form>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AuthPage;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { FaTwitter, FaGooglePlusG, FaFacebookF } from 'react-icons/fa';
+
+// const Loginpage = () => {
+//   const [isLogin, setIsLogin] = useState(false);
+
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     password: "",
+//   });
+
+//   // 👇 input handle
+//   const handleChange = (e) => {
+//     setFormData((prev) => ({
+//       ...prev,
+//       [e.target.name]: e.target.value,
+//     }));
+//   };
+
+//   // 🟢 REGISTER
+//   const handleRegister = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await fetch("http://localhost:3000/api/register", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(formData),
+//       });
+
+//       const data = await res.text();
+//       alert("Registered: " + data);
+//       setFormData({ name: "", email: "", password: "" });
+//     } catch (err) {
+//       console.error("Register Error", err);
+//     }
+//   };
+
+//   // 🔵 LOGIN
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await fetch("http://localhost:3000/api/login", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           email: formData.email,
+//           password: formData.password,
+//         }),
+//       });
+
+//       const data = await res.text();
+//       alert("Login: " + data);
+//       setFormData({ name: "", email: "", password: "" });
+//     } catch (err) {
+//       console.error("Login Error", err);
+//     }
+//   };
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-500 px-4">
+//       <div className="relative w-full max-w-5xl bg-white shadow-2xl rounded-lg overflow-hidden flex transition-all duration-700">
+        
+//         {/* 🔄 Background Side */}
+//         <div className={`absolute top-0 h-full w-1/2 z-10 transition-all duration-700 ease-in-out 
+//           ${isLogin ? 'left-1/2' : 'left-0'} 
+//           bg-[url('https://img.freepik.com/free-photo/programming-background-with-html-text_23-2150040419.jpg?semt=ais_hybrid&w=740')] 
+//           bg-cover bg-center text-white flex flex-col justify-center items-center px-8 py-12 rounded-lg`}>
+          
+//           <div className="flex gap-4 justify-center">
+//             <a href="#" className="bg-white text-blue-500 rounded-full p-2 hover:scale-110 transition"><FaTwitter /></a>
+//             <a href="#" className="bg-white text-red-500 rounded-full p-2 hover:scale-110 transition"><FaGooglePlusG /></a>
+//             <a href="#" className="bg-white text-blue-700 rounded-full p-2 hover:scale-110 transition"><FaFacebookF /></a>
+//           </div>
+//         </div>
+
+//         {/* 📄 Forms */}
+//         <div className="flex w-full transition-all duration-700">
+
+//           {/* 🔵 LOGIN FORM */}
+//           <div className={`w-1/2 p-10 transition-all duration-700 ${isLogin ? 'opacity-100 z-20' : 'opacity-0 z-0'}`}>
+//             <div className="flex justify-end mb-6">
+//               <button onClick={() => setIsLogin(false)} className="text-gray-600 mr-4 border-b-2 border-transparent hover:border-black transition">Register</button>
+//               <button className="text-white bg-sky-500 px-4 py-1 rounded">Sign In</button>
+//             </div>
+//             <h2 className="text-3xl font-bold text-gray-800 mb-6">Login</h2>
+//             <form onSubmit={handleLogin} className="space-y-5">
+//               <input
+//                 type="email"
+//                 name="email"
+//                 value={formData.email}
+//                 onChange={handleChange}
+//                 placeholder="Enter Your Email"
+//                 className="w-full border-b p-2 focus:outline-none"
+//                 required
+//               />
+//               <input
+//                 type="password"
+//                 name="password"
+//                 value={formData.password}
+//                 onChange={handleChange}
+//                 placeholder="Password"
+//                 className="w-full border-b p-2 focus:outline-none"
+//                 required
+//               />
+//               <button type="submit" className="w-full bg-sky-500 text-white py-3 rounded-md hover:bg-sky-600 transition">
+//                 Login
+//               </button>
+//             </form>
+//           </div>
+
+//           {/* 🟢 REGISTER FORM */}
+//           <div className={`w-1/2 p-10 transition-all duration-700 ${isLogin ? 'opacity-0 z-0' : 'opacity-100 z-20'}`}>
+//             <div className="flex justify-end mb-6">
+//               <button className="text-gray-600 mr-4 border-b-2 border-transparent hover:border-black transition" onClick={() => setIsLogin(true)}>Sign In</button>
+//               <button className="text-white bg-sky-500 px-4 py-1 rounded">Register</button>
+//             </div>
+//             <h2 className="text-3xl font-bold text-gray-800 mb-6">Register</h2>
+//             <form onSubmit={handleRegister} className="space-y-5">
+//               <input
+//                 type="text"
+//                 name="name"
+//                 value={formData.name}
+//                 onChange={handleChange}
+//                 placeholder="Full Name"
+//                 className="w-full border-b p-2 focus:outline-none"
+//                 required
+//               />
+//               <input
+//                 type="email"
+//                 name="email"
+//                 value={formData.email}
+//                 onChange={handleChange}
+//                 placeholder="Enter Your Email"
+//                 className="w-full border-b p-2 focus:outline-none"
+//                 required
+//               />
+//               <input
+//                 type="password"
+//                 name="password"
+//                 value={formData.password}
+//                 onChange={handleChange}
+//                 placeholder="Password"
+//                 className="w-full border-b p-2 focus:outline-none"
+//                 required
+//               />
+//               <div className="flex items-start gap-2">
+//                 <input type="checkbox" className="mt-1" />
+//                 <p className="text-sm text-gray-600">
+//                   I agree to the <span className="text-blue-500 underline">Terms of service</span>
+//                 </p>
+//               </div>
+//               <button type="submit" className="w-full bg-sky-500 text-white py-3 rounded-md hover:bg-sky-600 transition">
+//                 Sign Up
+//               </button>
+//             </form>
+//           </div>
+
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Loginpage;
+
+
+// ✅ LoginPage.jsx
+
+
+
+About////////////////////////////////////
+
+// import React from "react";
+// import Navbar from "./Navbar";
+// import Footer from "../components/Footer"
+
+// const About = () => {
+//   return (
+//     <>
+//    <Navbar/>
+//     <div className="min-h-screen bg-white text-gray-800 px-6 mt-11 py-12 md:px-24 lg:px-32">
+//       <h1 className="text-4xl font-bold text-orange-500 mb-8">About Me</h1>
+
+//       <div className="flex flex-col lg:flex-row items-center gap-10">
+//         {/* Profile Image */}
+//         <div className="w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg">
+//           <img
+//             src="https://avatars.githubusercontent.com/u/0000000?v=4"
+//             alt="Kiran Thakur"
+//             className="w-full h-full object-cover"
+//           />
+//         </div>
+
+//         {/* Bio Section */}
+//         <div>
+//           <p className="text-lg leading-7 mb-4">
+//             Hi! I'm <span className="font-semibold text-orange-500">Kiran Thakur</span>, a passionate Front-End Developer who turns ideas into reality using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. I'm currently building my dream resume website using React.js ✨
+//           </p>
+
+//           <p className="text-lg leading-7 mb-4">
+//             I've built fun projects like <em>Tic Tac Toe</em>, <em>Stone Paper Scissors</em>, and a <em>Weather App</em>. I enjoy solving problems and improving my skills every day.
+//           </p>
+
+//           <p className="text-lg leading-7 mb-4">
+//             I may not have a formal degree yet, but I’ve dedicated my time and heart to web development. I believe in <span className="italic">“Karma Yoga”</span> from the Bhagavad Gita — do your duty and success will follow.
+//           </p>
+
+//           <p className="text-lg leading-7">
+//             Currently looking for a Front-End Developer role in Hyderabad 🚀
+//             Let’s connect and build something amazing!
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//     <Footer/>
+
+//   </>
+//   );
+// };
+
+// export default About;
+Contact//////////////////////////////////////////////////
+// // Contact.js
+// import React from 'react';
+// import Footer from './Footer';
+
+// const Contact = () => {
+//   return (
+//     <>
+   
+//     <div className="min-h-screen  flex items-center justify-center px-6 py-12">
+//       <div className="max-w-6xl w-full  rounded-3xl  p-10 flex flex-col md:flex-row items-center justify-between gap-12">
+
+//         {/* Left Side - Heading and Text */}
+//         <div className="md:w-1/2">
+//           <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-6">Get In Touch</h2>
+//           <p className="text-gray-600 mb-8">
+//             Feel free to reach out to me anytime. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+//           </p>
+//           <p className="text-gray-600">
+//             Let's build something amazing together! 🚀
+//           </p>
+//         </div>
+
+//         {/* Right Side - Form */}
+//         <div className="md:w-1/2 w-full">
+//           <form className="flex flex-col gap-6">
+//             <div>
+//               <label className="block mb-2 text-sm font-semibold text-gray-700">Name</label>
+//               <input 
+//                 type="text" 
+//                 placeholder="Your Name" 
+//                 className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+//               />
+//             </div>
+
+//             <div>
+//               <label className="block mb-2 text-sm font-semibold text-gray-700">Email</label>
+//               <input 
+//                 type="email" 
+//                 placeholder="Your Email" 
+//                 className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+//               />
+//             </div>
+
+//             <div>
+//               <label className="block mb-2 text-sm font-semibold text-gray-700">Message</label>
+//               <textarea 
+//                 placeholder="Your Message" 
+//                 rows="5"
+//                 className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+//               ></textarea>
+//             </div>
+
+//             <button 
+//               type="submit" 
+//               onClick={(e) => { 
+//                 e.preventDefault(); 
+//                 alert('Thank you for contacting me! 🚀');
+//               }}
+//               className="bg-orange-500 hover:bg-pink-400 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+//             >
+//               Send Message
+//             </button>
+//           </form>
+//         </div>
+
+//       </div>
+//     </div>
+//     <Footer/>
+//     </>
+//   );
+// };
+
+// export default Contact;
+
+
+FullStackDeveloper////////////////////////////////////////////
+
+// import React from 'react';
+// import {
+//   FaHtml5,
+//   FaCss3Alt,
+//   FaJsSquare,
+//   FaReact,
+//   FaNodeJs,
+//   FaDatabase,
+// } from 'react-icons/fa';
+
+// const skills = [
+//   { icon: <FaHtml5 />, label: 'HTML', color: '#E34F26' },
+//   { icon: <FaCss3Alt />, label: 'CSS', color: '#1572B6' },
+//   { icon: <FaJsSquare />, label: 'JavaScript', color: '#F7DF1E' },
+//   { icon: <FaReact />, label: 'React', color: '#61DAFB' },
+//   { icon: <FaNodeJs />, label: 'Node.js', color: '#3C873A' },
+//   { icon: <FaDatabase />, label: 'MongoDB', color: '#47A248' },
+// ];
+
+// const FullStackDeveloper = () => {
+//   return (
+//     <section className="w-full bg-gradient-to-r from-white via-pink-50 to-white py-12 px-4">
+//       <div className="max-w-7xl mx-auto text-center">
+//         <h2 className="text-4xl font-extrabold text-[#a100f2] mb-4">Full Stack Developer</h2>
+//         <p className="text-gray-700 text-lg mb-10 max-w-2xl mx-auto">
+//           I build scalable, secure, and beautiful web applications using modern frontend and backend technologies.
+//         </p>
+
+//         <div className="flex flex-wrap justify-center gap-10 text-center">
+//           {skills.map((skill, index) => (
+//             <div
+//               key={index}
+//               className="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-300"
+//             >
+//               <div className="text-5xl" style={{ color: skill.color }}>
+//                 {skill.icon}
+//               </div>
+//               <p className="text-sm font-semibold text-gray-700">{skill.label}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FullStackDeveloper;
+
+
+Hero/////////////////////////////
+// import React from 'react'
+// // import Typing from './Typing'
+// import { Typewriter } from 'react-simple-typewriter';
+// import { FaXTwitter, FaWhatsapp, FaGithub } from "react-icons/fa6";
+// import { MdEmail } from "react-icons/md";
+// import { Link } from 'react-router-dom'
+// import heroImage from '../assets/image.jpg'
+
+
+// const Hero = () => {
+//   return (
+//     <div className='hero-container overflow-hidden w-screen h-screen flex gap-1 items-center mt-6 bg-white text-black'>
+//         <div className='w-1/2 p-20'>
+//             <p className='text-[#495057] text-2xl tracking-tight'>hell<span className='text-pink-500'>o</span>, I'm </p>
+//             <h1 className='text-7xl mb-2 font-extrabold text-[#495057] tracking-tight font-poppins'>Thakur Kiran</h1>
+//             {/* <Typing/> */}
+//             {/* <span className='text-pink-400 text-6xl font-bold'> */}
+//             <span className='text-purple-500 text-6xl font-bold'>
+
+//         <Typewriter
+//           words={['HTML', 'CSS', 'JavaScript', 'React.JS' , '& Node.js']}
+//           loop={Infinity}
+//           cursor
+//           cursorStyle="!"
+//           typeSpeed={70}
+//           deleteSpeed={50}
+//           delaySpeed={1000}
+//         />
+//       </span>
+//       <div className="flex gap-4 items-center mt-4">
+//            <h2 className="bg-[#ff7a57] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition-all duration-300 cursor-pointer">
+//                  Hire Me
+//           </h2>
+//           <h2 className="bg-[#343a40] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition-all duration-300 cursor-pointer">
+//               Download CV
+//           </h2>
+  
+//       </div>
+
+//       <div className="flex gap-4 text-3xl mt-5 text-gray-800">
+//   <a href="https://twitter.com/your_username" target="_blank" rel="noopener noreferrer">
+//     <FaXTwitter className=' hover:text-pink-400 rounded-2xl' />
+//   </a>
+//   <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+//     <FaWhatsapp className=' hover:text-pink-400 rounded-2xl' />
+//   </a>
+//   <a href="mailto:your@email.com">
+//     <MdEmail className='  hover:text-pink-400 rounded-2xl'/>
+//   </a>
+//   <a href="https://github.com/your_github" target="_blank" rel="noopener noreferrer">
+//     <FaGithub className='  hover:text-pink-400 rounded-2xl'/>
+//   </a>
+// </div>
+
+
+
+// {/* <Link to="/about">
+//   <h2 className="bg-[#ff7a57] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-pink-500 transition-all duration-300 cursor-pointer">
+//     Read More
+//   </h2>
+// </Link> */}
+
+
+
+
+      
+
+
+//         </div>
+//         <div className='logo-container w-1/2 flex items-center'>
+//                <img 
+//                   src={heroImage}
+//                   // src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/steller/assets/imgs/man.svg" 
+//                   alt="heerp" 
+//                   className="h-[500px] w-auto object-contain"
+                 
+//                  />
+//         </div>
+      
+//     </div>
+//   )
+// }
+
+// export default Hero
+
+
+
+// import React from 'react';
+// import { Typewriter } from 'react-simple-typewriter';
+// import { FaXTwitter, FaWhatsapp, FaGithub } from "react-icons/fa6";
+// import { MdEmail } from "react-icons/md";
+// import heroImage from '../assets/image.jpg';
+
+// const Hero = () => {
+//   return (
+//     <div className='hero-container overflow-hidden w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 pt-24 md:pt-0 bg-white text-black'>
+      
+//       {/* Left Content */}
+//       <div className='w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left'>
+//         <p className='text-[#495057] text-2xl tracking-tight'>
+//           hell<span className='text-pink-500'>o</span>, I'm
+//         </p>
+//         <h1 className='text-4xl md:text-6xl lg:text-7xl mb-2 font-extrabold text-[#495057] tracking-tight font-poppins'>
+//           Thakur Kiran
+//         </h1>
+
+//         <span className='text-purple-500 text-3xl md:text-5xl font-bold block mt-2'>
+//           <Typewriter
+//             words={['HTML', 'CSS', 'JavaScript', 'React.JS', '& Node.js']}
+//             loop={Infinity}
+//             cursor
+//             cursorStyle="!"
+//             typeSpeed={70}
+//             deleteSpeed={50}
+//             delaySpeed={1000}
+//           />
+//         </span>
+
+//         {/* Buttons */}
+//         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start mt-6">
+//           <h2 className="bg-[#ff7a57] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300 cursor-pointer">
+//             Hire Me
+//           </h2>
+//           <h2 className="bg-[#343a40] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300 cursor-pointer">
+//             Download CV
+//           </h2>
+//         </div>
+
+//         {/* Social Icons */}
+//         <div className="flex gap-6 justify-center md:justify-start text-3xl mt-6 text-gray-800">
+//           <a href="https://twitter.com/your_username" target="_blank" rel="noopener noreferrer">
+//             <FaXTwitter className='hover:text-pink-400' />
+//           </a>
+//           <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+//             <FaWhatsapp className='hover:text-pink-400' />
+//           </a>
+//           <a href="mailto:your@email.com">
+//             <MdEmail className='hover:text-pink-400' />
+//           </a>
+//           <a href="https://github.com/your_github" target="_blank" rel="noopener noreferrer">
+//             <FaGithub className='hover:text-pink-400' />
+//           </a>
+//         </div>
+//       </div>
+
+//       {/* Right Image */}
+//       <div className='w-full md:w-1/2 flex justify-center items-center'>
+//         <img
+//           src={heroImage}
+//           alt="hero"
+//           className="h-64 sm:h-80 md:h-[500px] w-auto object-contain"
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Hero;
+
+
+navbar//////////////////////////////////////////////////
+
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+
+// const Navbar = () => {
+//   return (
+//     // <div className=' main-container fixed  h-screen w-screen font-sans  shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] flex justify-evenly items-center bg-white text-black px-6 py-3'>
+//     <div herf="#home" className='fixed top-0 left-0 w-full mb-4 z-50  flex justify-between items-center  text-black px-20 py-3 font-sans'>
+
+//         {/* This is LOgo Section */}
+//         <div className='logo-container flex items-center'>
+//                {/* <img 
+//                   src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/steller/assets/imgs/logo.svg" 
+//                   alt="Logo" 
+//                   className="h-16 w-auto object-contain"
+//                  /> */}
+//                  <h1>kiran</h1>
+//         </div>
+
+
+//         {/* Link Section  */}
+//         <div className=''>
+//             <ul className=' flex gap-6 items-center '>
+//                 <li herf="#home" className='hover:text-pink-400 cursor-pointer'><Link to="/">Home</Link></li>
+//                 <li herf="#one" className='hover:text-pink-400 cursor-pointer'><Link to="/about">About</Link></li>
+//                <a href="#skills"> <li className='hover:text-pink-400 cursor-pointer'>Skills</li></a>
+//                 <li className='hover:text-pink-400 cursor-pointer'><Link to="/project">Portfolio</Link></li>
+//                 <li className='hover:text-pink-400 cursor-pointer'>	<Link to="/register">Register</Link></li>
+//                 <li className='hover:text-pink-400 cursor-pointer'>	<Link to="/login">Login</Link></li>
+//                 <li className='hover:text-pink-400 cursor-pointer'><Link to="/contact">Contact</Link></li>
+//                 <li className='bg-orange-400 w-24 rounded-3xl border-amber-400 p-2 hover:bg-pink-400'>Componets</li>
+                
+//             </ul>
+//         </div>
+      
+//     </div>
+//   )
+// }
+
+// export default Navbar
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+
+// const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//   };
+
+//   return (
+//     <nav className="fixed top-0 left-0 w-full mb-4 z-50 bg-white text-black px-4 py-3 font-sans shadow-md md:px-20">
+//       <div className="flex justify-between items-center max-w-7xl mx-auto">
+//         {/* Logo Section */}
+//         <div className="logo-container flex items-center">
+//           <img
+//             src="https://www.free-css.com/assets/files/free-css-templates/preview/page287/steller/assets/imgs/logo.svg"
+//             alt="Logo"
+//             className="h-12 md:h-16 w-auto object-contain"
+//           />
+//         </div>
+
+//         {/* Desktop Navigation */}
+//         <div className="hidden md:block">
+//           <ul className="flex gap-6 items-center">
+//             <li className="hover:text-pink-400 cursor-pointer">
+//               <Link to="/">Home</Link>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer">
+//               <Link to="/about">About</Link>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer">
+//               <a href="#skills">Skills</a>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer">
+//               <Link to="/project">Portfolio</Link>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer">Sign Up</li>
+//             <li className="hover:text-pink-400 cursor-pointer">Login</li>
+//             <li className="hover:text-pink-400 cursor-pointer">
+//               <Link to="/contact">Contact</Link>
+//             </li>
+//             <li className="bg-orange-400 w-24 rounded-3xl border-amber-400 p-2 hover:bg-pink-400 text-center">
+//               Components
+//             </li>
+//           </ul>
+//         </div>
+
+//         {/* Mobile Menu Button */}
+//         <div className="md:hidden">
+//           <button
+//             onClick={toggleMenu}
+//             className="text-black focus:outline-none"
+//           >
+//             <svg
+//               className="w-6 h-6"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//               xmlns="http://www.w3.org/2000/svg"
+//             >
+//               {isMenuOpen ? (
+//                 <path
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth={2}
+//                   d="M6 18L18 6M6 6l12 12"
+//                 />
+//               ) : (
+//                 <path
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth={2}
+//                   d="M4 6h16M4 12h16M4 18h16"
+//                 />
+//               )}
+//             </svg>
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navigation */}
+//       {isMenuOpen && (
+//         <div className="md:hidden bg-white py-4 px-2 shadow-lg">
+//           <ul className="flex flex-col gap-4">
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               <Link to="/" onClick={toggleMenu}>Home</Link>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               <Link to="/about" onClick={toggleMenu}>About</Link>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               <a href="#skills" onClick={toggleMenu}>Skills</a>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               <Link to="/project" onClick={toggleMenu}>Portfolio</Link>
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               Sign Up
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               Login
+//             </li>
+//             <li className="hover:text-pink-400 cursor-pointer border-b pb-2">
+//               <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+//             </li>
+//             <li className="bg-orange-400 w-full rounded-3xl border-amber-400 p-2 hover:bg-pink-400 text-center">
+//               Components
+//             </li>
+//           </ul>
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+Projects///////////////////////////////////////
+
+// import React from 'react';
+// import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+// import { motion } from 'framer-motion';
+
+
+// const projects = [
+//   {
+//     title: "E-commerce",
+//     description: "Full-stack E-commerce app using React.js, Express.js, Redux, and React Router.",
+//     liveLink: "https://dulcet-chimera-a0098f.netlify.app/",
+//     github: "https://github.com/Kiranthakurcoder/E-commerce.com",
+   
+//   },
+//   {
+//     title: "Tic Tac Toe Game",
+//     description: "A simple and fun Tic Tac Toe game built using HTML, CSS, and JavaScript.",
+//     liveLink: "https://kiranthakurcoder.github.io/Tic-Tac-Toe.in/",
+//     github: "https://github.com/Kiranthakurcoder/Tic-Tac-Toe.in",
+//   },
+//   {
+//     title: "Stone Paper Scissors",
+//     description: "A classic game recreated with clean UI and responsive design.",
+//     liveLink: "https://kiranthakurcoder.github.io/stone-paper-scissors/",
+//     github: "https://github.com/Kiranthakurcoder/stone-paper-scissors",
+//   },
+//   {
+//     title: "Weather App",
+//     description: "Check real-time weather using OpenWeather API. Built with HTML, CSS, JS.",
+//     liveLink: "https://kiranthakurcoder.github.io/WeatherApp.com/",
+//     github: "https://github.com/Kiranthakurcoder/WeatherApp.com",
+//   },
+//    {
+//     title: "ToDo-List",
+//     description: "A simple and responsive To-Do List app built using HTML, CSS, and JavaScript with task add, delete, complete, and local storage features.",
+//     liveLink: "https://kiranthakurcoder.github.io/Todo-List/",
+//      github: "https://github.com/Kiranthakurcoder/Todo-List",
+//   },
+// ];
+
+// const Projects = () => {
+//   return (
+//     <section id="projects" className="py-16 px-6 bg-gradient-to-br from-white to-orange-50">
+//       <h2 className="text-4xl font-bold text-center text-orange-500 mb-12">My Projects</h2>
+
+//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+//         {projects.map((project, index) => (
+//           <motion.div
+//           initial={{ opacity: 0, y: 50 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, delay: index * 0.2 }}
+//           viewport={{ once: true }}
+//             key={index}
+//             className="backdrop-blur-md bg-white/70 rounded-2xl p-6 border border-orange-100 shadow-lg hover:shadow-2xl transition-all duration-300"
+//           >
+//             <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+//             <p className="text-gray-600 mb-6">{project.description}</p>
+//             <div className="flex items-center justify-between">
+//               <a
+//                 href={project.liveLink}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="flex items-center gap-2 text-orange-500 font-semibold hover:underline"
+//               >
+//                 Live <FaExternalLinkAlt />
+//               </a>
+//               <a
+//                 href={project.github}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="flex items-center gap-2 text-gray-800 font-semibold hover:underline"
+//               >
+//                 GitHub <FaGithub />
+//               </a>
+//             </div>
+//           </motion.div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Projects;
+
+
+
+
+
+
+mapEasingToNativeEasing.jsx/////////////////////////////
+// import Home from './components/Home.jsx';
+// import About from './components/About.jsx';
+
+// createRoot(document.getElementById('root')).render(
+//   <StrictMode>
+//     <BrowserRouter>
+// <App />
+// <Routes>
+//   <Route path="/" element={<Home />} />
+//   <Route path="/about" element={<About />} />
+// </Routes>
+// </BrowserRouter>
+//   </StrictMode>,
+// )
