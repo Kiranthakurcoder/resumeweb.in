@@ -18,7 +18,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://resumedatabase.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
