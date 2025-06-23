@@ -51,9 +51,14 @@ const Hero = () => {
           <h2 className="bg-[#ff7a57] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300 cursor-pointer">
             Hire Me
           </h2>
-          <h2 className="bg-[#343a40] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300 cursor-pointer">
+
+          <a
+            href="/Kiran-Thakur-resume.pdf"
+            download
+            className="bg-[#343a40] text-white font-semibold uppercase px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300 cursor-pointer"
+          >
             Download CV
-          </h2>
+          </a>
         </motion.div>
 
         {/* Social Icons */}
@@ -72,12 +77,13 @@ const Hero = () => {
             <FaXTwitter className="hover:text-pink-400" />
           </a>
           <a
-            href="https://wa.me/9912018462"
+            href="https://wa.me/919912018462"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaWhatsapp className="hover:text-pink-400" />
           </a>
+
           <a href="mailto:kiranthakur1407@gmail.com">
             <MdEmail className="hover:text-pink-400" />
           </a>

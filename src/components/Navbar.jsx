@@ -101,12 +101,11 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          <li
-            className="bg-orange-400 w-32 text-white text-center py-2 rounded-3xl hover:bg-pink-400 transition"
-            onClick={toggleMenu}
-          >
-            Components
-          </li>
+          <a href="https://github.com/Kiranthakurcoder/resumeweb.in">
+            <li className="bg-orange-400 w-24 rounded-3xl border-amber-400 p-2 text-center hover:bg-pink-400">
+              GitHub
+            </li>
+          </a>
         </ul>
       )}
     </>

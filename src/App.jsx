@@ -1,11 +1,11 @@
 
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
-import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Loginpage from './components/pages/loginpage'
-import RegisterPage from './components/pages/RegisterPage'
+import About from './components/pages/About'
+import Projects from './components/pages/Projects'
+import Contact from './Auth/Contact'
+import Loginpage from '../src/Auth/Loginpage'
+import RegisterPage from './Auth/RegisterPage'
 
 function App() {
   return (
